@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="icon" href="../image/icon-title.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/flexboxgrid.css">
 </head>
+
 <body>
 
-<h1>Login</h1>
 
-<a href="../web/index.html">Inicio</a>
+    <div class="container-fluid">
 
-<label for="usuario">Usuario</label>
-<input type="text" name="usuario" placeholder="ingrese usuario" id="usuario">
-    
+        <div class="login">
 
-<label for="password">Contraseña</label>
-<input type="password" name="password" placeholder="ingrese contraseña" id="password">
+            <div class="row start-xs start-sm start-md start-lg">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="registro.php"><i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+
+            <div class="row center-xs center-sm center-md center-lg">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1>Login</h1>
+                </div>
+            </div>
+
+            <div class="row center-xs center-sm center-md center-lg">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input type="text" name="usuario" placeholder="Usuario" id="usuario">
+                </div>
+            </div>
+
+            <div class="row center-xs center-sm center-md center-lg">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input type="password" name="password" placeholder="Contraseña" id="password">
+                </div>
+            </div>
+
+            <div class="row center-xs center-sm center-md center-lg">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <button onclick="validarUsuario()">Ingresar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 
-<a href="registro.php">Registrarse</a>
+    <script src="../js/ajax.js"></script>
+    <script src="https://kit.fontawesome.com/6d4ecc76b9.js" crossorigin="anonymous"></script>
 
-<button onclick="validarUsuario()">Ingresar</button>
-
-<script src="../js/ajax.js"></script>
 </body>
+
 </html>
