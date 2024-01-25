@@ -1,4 +1,7 @@
-INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(1,'Arica y Parinacota','XV');
+    
+	/* REGIONES */
+
+	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(1,'Arica y Parinacota','XV');
 	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(2,'Tarapaca','I');
 	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(3,'Antofagasta','II');
 	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(4,'Atacama','III');
@@ -14,6 +17,7 @@ INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(1,'Arica y
 	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(14,'Aisen del General Carlos Ibanez del Campo','XI');
 	INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(15,'Magallanes y de la Antartica Chilena','XII');
 
+     /*PROVINCIAS*/
  
 	INSERT INTO provincias (provincia_id,provincia_nombre,region_id)VALUES(1,'Arica',1);
 	INSERT INTO provincias (provincia_id,provincia_nombre,region_id)VALUES(2,'Parinacota',1);
@@ -69,6 +73,7 @@ INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(1,'Arica y
 	INSERT INTO provincias (provincia_id,provincia_nombre,region_id)VALUES(52,'Tierra del Fuego',15);
 	INSERT INTO provincias (provincia_id,provincia_nombre,region_id)VALUES(53,'ultima Esperanza',15);
 	
+	/*COMUNAS*/
 
 
     INSERT INTO comunas (comuna_id,comuna_nombre,provincia_id) values(1,'Arica',1);
@@ -416,9 +421,28 @@ INSERT INTO regiones (region_id,region_nombre,region_ordinal)  values(1,'Arica y
 	INSERT INTO comunas (comuna_id,comuna_nombre,provincia_id) values(343,'Timaukel',52);
 	INSERT INTO comunas (comuna_id,comuna_nombre,provincia_id) values(344,'Natales',53);
 	INSERT INTO comunas (comuna_id,comuna_nombre,provincia_id) values(345,'Torres del Paine',53);
+
+
+
+	/*SEXO*/
 	
-	
-	
+	INSERT INTO public.sexo("idSexo","descripcionSexo") VALUES (1,'Hembra');
+	INSERT INTO public.sexo("idSexo","descripcionSexo") VALUES (2,'Macho');
+
+
+
+	/*ESTADO REPRODUCTIVO DEL ANIMAL*/
+
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (1,'Periodo de celo');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (2,'Esterilizada');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (3,'Castrado');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (4,'Embarazada');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (5,'Lactante');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (6,'Periodo no receptivo');
+	INSERT INTO public."estadoReproductivo"("idEstadoReproductivo","descripcionEstadoReproductivo") VALUES (7,'Reposo');
+
+
+
 
 	
 
