@@ -64,6 +64,7 @@ body {
 button {
     width: 50%;
     padding: 10px;
+    margin-bottom: 20px;
     background-color: #EF993E;
     font-size: 15px;
     color: #fff;

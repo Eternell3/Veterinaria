@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Veterinaria</title>
     <link rel="icon" href="../image/icon-title.png" type="image/x-icon">
 </head>
+
 <body>
+
+    <h1>Veterinaria</h1>
+
+    <a href="registro.php">Registro</a>
+
     
-
-<h1>
-    registro
-</h1>
-
-<a href="../php/login.php">Login</a>
-<a href="../web/index.html">Inicio</a>
 </body>
+
 </html>

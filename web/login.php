@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="icon" href="../image/icon-title.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/flexboxgrid.css">
+    <link rel="stylesheet" href="../css/login.css">
+   
 </head>
 
 <body>

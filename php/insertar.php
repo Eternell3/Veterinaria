@@ -55,7 +55,7 @@ switch ($cmd) {
         } else {
             // Manejar error de la consulta
             $response['status'] = 'error';
-            $response['message'] = "Error de LastError: $last_error";
+            $response['message'] = "Error de LastError: " . $last_error;
         }
 
         echo json_encode($response);
