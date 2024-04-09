@@ -38,7 +38,7 @@
                         <!--- Esta columna es para dar un espacio al principio-->
                     </div>
                     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                        <input type="text" id="rut" placeholder="Rut">
+                        <input type="text" id="rut" placeholder="Rut: 1.111.111-1">
                     </div>
 
                 </div>
@@ -194,7 +194,10 @@
             </div>
 
         </div>
-            <script src="../js/ajax.js"></script>
+            <script src="../js/POST.js"></script>
+            <script src="../js/GET.js"></script>
+            <script src="../js/validaciones.js"></script>
+            <script src="../js/validarFormatos.js"></script>
             <script src="https://kit.fontawesome.com/6d4ecc76b9.js" crossorigin="anonymous"></script>
 </body>
 

@@ -16,6 +16,8 @@
 
     <div class="container-fluid">
 
+
+
         <div class="login">
 
             <div class="row start-xs start-sm start-md start-lg">
@@ -53,7 +55,7 @@
     </div>
 
 
-    <script src="../js/ajax.js"></script>
+    <script src="../js/login.js"></script>
     <script src="https://kit.fontawesome.com/6d4ecc76b9.js" crossorigin="anonymous"></script>
 
 </body>
