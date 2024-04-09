@@ -1,5 +1,20 @@
 
-//rut = "19153970-2";
+function validarFormatoEmail(email) {
+
+
+    const formatoCorreo = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+    if (formatoCorreo.test(email)) {
+
+        return true;
+
+    } else {
+
+        return false;
+    }
+}
+
+
 
 function validarFormatoRut(rut) {
 
@@ -45,7 +60,7 @@ function validarRut(rut) {
             multiplo = 2;
         }
     }
-  
+
     // SE OBTIENE EL RESTO DE LA OPERACION ENTRE EL MODULO 11 Y LA SUMA DE LOS NUMEROS DEL RUT
     resto = suma % modulo;
     dv_verificado = modulo - resto;
@@ -58,7 +73,7 @@ function validarRut(rut) {
     if (dv_verificado == 10) {
 
         dv_comparar = "K"
-       
+
         if (dv_comparar == dv) {
             return true;
 
@@ -78,7 +93,7 @@ function validarRut(rut) {
 
     } else if (dv_verificado != 11 && dv_verificado != 10) {
         dv_comparar = dv_verificado
-       
+
         if (dv_comparar == dv) {
             return true;
 

@@ -9,36 +9,60 @@ function validarUsuario() {
     const usuario = document.getElementById("usuario").value;
     const password = document.getElementById("password").value;
 
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "../php/registrosBDD.php?cmd=validarUsuario&email=" + usuario + "&password=" + password);
+    if (usuario.length == 0) {
 
-    xhr.send();
+        alert("Ingrese un correo electrónico");
+        return false;
 
-    xhr.onload = function () {
+    } else if (validarFormatoEmail(usuario) == false) {
 
-        if (xhr.status != 200) {
-            alert(xhr.status + ":" + xhr.responseText);
+        alert("Ingrese un correo valido");
+        document.getElementById("usuario").value = "";
+        document.getElementById("password").value = "";
+        return false;
 
-        } else {
+    } else if (password.length == 0) {
 
-            const data = JSON.parse(xhr.responseText);
+        alert("Ingrese contraseña");
+        return false;
 
-            if (data.status === 'success') {
+    } else {
 
-                alert(data.resultados);
-                window.location.href = "registroMascota.php";
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "../php/registrosBDD.php?cmd=validarUsuario&email=" + usuario + "&password=" + password);
+
+        xhr.send();
+
+        xhr.onload = function () {
+
+            if (xhr.status != 200) {
+                alert(xhr.status + ":" + xhr.responseText);
 
             } else {
-                alert(data.message);
 
+                const data = JSON.parse(xhr.responseText);
+
+                if (data.status === 'success' && data.resultados === 'Log-in Exitoso') {
+
+                    alert(data.resultados);
+                    window.location.href = "registroMascota.php";
+
+                } else {
+
+                    alert(data.resultados);
+                    document.getElementById("usuario").value = "";
+                    document.getElementById("password").value = "";
+
+                }
             }
+
+        };
+
+        xhr.onerror = function () {
+            const data = JSON.parse(xhr.responseText);
+            alert(data.message);
         }
 
-    };
-
-    xhr.onerror = function () {
-
-        alert("Petición realizada no fue exitosa.");
     }
 
 }

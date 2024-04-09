@@ -78,9 +78,9 @@ switch ($cmd) {
         if ($result) {
             // La consulta fue exitosa
             $row = pg_fetch_assoc($result);
-            $respuesta = $row['resultados'];
+            //$respuesta = $row['resultados'];
             $response['status'] = 'success';
-            $response['resultados'] = $respuesta;
+            $response['resultados'] =  $row['resultados']; //$respuesta;
 
         } else {
             // Manejar error de la consulta

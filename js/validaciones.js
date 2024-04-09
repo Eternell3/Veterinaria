@@ -1,5 +1,10 @@
 
 
+
+
+
+//VALIDAR CAMPOS DE LA WEB registroUsuario.php
+
 function validarRegistro() {
 
 
