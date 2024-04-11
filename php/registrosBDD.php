@@ -80,7 +80,7 @@ switch ($cmd) {
             $row = pg_fetch_assoc($result);
             //$respuesta = $row['resultados'];
             $response['status'] = 'success';
-            $response['resultados'] =  $row['resultados']; //$respuesta;
+            $response['resultados'] = $row['resultados']; //$respuesta;
 
         } else {
             // Manejar error de la consulta
@@ -90,6 +90,72 @@ switch ($cmd) {
 
         echo json_encode($response);
         break;
+
+    case 'validarRutDuplicados':
+
+        $rut = $_REQUEST['rut'];
+        $sql = "SELECT FN_VALIDAR_RUT_DUPLICADO($1) AS resultados";
+
+        $result = pg_query_params($conn, $sql, array($rut));
+        $last_error = pg_last_error($conn);
+
+        if ($result) {
+            // La consulta fue exitosa
+            $row = pg_fetch_assoc($result);
+            //$respuesta = $row['resultados'];
+            // $response['status'] = 'success';
+            $response['resultados'] = $row['resultados']; //$respuesta;
+
+            if ($response['resultados'] == 'f') {
+                $response['status'] = 'false';
+                $response['message'] = "Rut no Existe";
+            } else {
+                $response['status'] = 'true';
+                $response['message'] = "Rut Existente";
+            }
+
+        } else {
+            // Manejar error de la consulta
+            $response['status'] = 'error';
+            $response['message'] = "Error de LastError: $last_error";
+        }
+
+        echo json_encode($response);
+
+        break;
+
+        case 'validarCorreoDuplicados':
+
+            $email = $_REQUEST['email'];
+            $sql = "SELECT FN_VALIDAR_CORREO_DUPLICADO($1) AS resultados";
+    
+            $result = pg_query_params($conn, $sql, array($email));
+            $last_error = pg_last_error($conn);
+    
+            if ($result) {
+                // La consulta fue exitosa
+                $row = pg_fetch_assoc($result);
+                //$respuesta = $row['resultados'];
+                // $response['status'] = 'success';
+                $response['resultados'] = $row['resultados']; //$respuesta;
+    
+                if ($response['resultados'] == 'f') {
+                    $response['status'] = 'false';
+                    $response['message'] = "Correo No Existe";
+                } else {
+                    $response['status'] = 'true';
+                    $response['message'] = "Correo Existente";
+                }
+    
+            } else {
+                // Manejar error de la consulta
+                $response['status'] = 'error';
+                $response['message'] = "Error de LastError: $last_error";
+            }
+    
+            echo json_encode($response);
+    
+            break;
 
     default:
 

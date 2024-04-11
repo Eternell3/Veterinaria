@@ -2,7 +2,7 @@
 function validarFormatoEmail(email) {
 
 
-    const formatoCorreo = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    const formatoCorreo = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-_]+\.[a-z]{2,4}$/
 
     if (formatoCorreo.test(email)) {
 
@@ -18,7 +18,7 @@ function validarFormatoEmail(email) {
 
 function validarFormatoRut(rut) {
 
-    const formatoRut = /^\d{1,2}\.\d{3}\.\d{3}-[\dK-k]$/;
+    const formatoRut = /^\d{1,2}\.\d{3}\.\d{3}-[0-9K-k]{1}$/;
 
     if (formatoRut.test(rut) == true) {
 
@@ -34,7 +34,7 @@ function validarFormatoRut(rut) {
 function validarRut(rut) {
 
     //REEMPLAZAR  PUNTOS Y GUIONES POR VACIO
-    const rutPelado = rut.replace(/[.-]/g, '')
+    const rutPelado = rut.replace(/[.-]/g, '');
 
     //SE SEPARA EL CUERPO DEL RUT Y EL DV 
     const cuerpoRut = rutPelado.slice(0, -1);

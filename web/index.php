@@ -12,7 +12,7 @@
 
     <h1>Veterinaria</h1>
 
-    <a href="registro.php">Registro</a>
+    <a href="registroUsuario.php">Registro</a>
 
     
 </body>

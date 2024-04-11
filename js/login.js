@@ -3,7 +3,7 @@
 
 // FUNCION QUE PERMITE VALIDAR LAS CREDENCIALES DE USUARIO PARA EL LOGIN
 
-function validarUsuario() {
+function LOGIN() {
 
 
     const usuario = document.getElementById("usuario").value;
@@ -45,7 +45,7 @@ function validarUsuario() {
                 if (data.status === 'success' && data.resultados === 'Log-in Exitoso') {
 
                     alert(data.resultados);
-                    window.location.href = "registroMascota.php";
+                    window.location.href = "index.php";
 
                 } else {
 

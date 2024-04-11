@@ -56,6 +56,8 @@ function inscribirPropietario() {
                 if (data.status === 'success') {
     
                     alert(data.resultados);
+                    window.location.href = "login.php";
+
     
                 } else {
                     alert(data.message);
